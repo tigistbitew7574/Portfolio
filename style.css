@@ -180,9 +180,9 @@ section h1 {
   border-radius: 5px;
 }
 
-/* Content below titles */
+/* Content wrapper to prevent overlap */
 section .content-wrapper {
-  margin-top: 50px; /* to not overlap fixed h2 */
+  margin-top: 50px;
 }
 
 section p,
@@ -235,12 +235,21 @@ a:hover {
   100% { opacity: 1; transform: translateX(0); }
 }
 
-/* Responsive */
+/* Responsive - Android / Mobile */
 @media (max-width: 768px) {
+  /* Hero image on top */
   .hero {
-    flex-direction: column-reverse;
+    flex-direction: column;
     padding: 2rem;
     text-align: center;
+  }
+
+  .hero-left {
+    order: 2;
+  }
+
+  .hero-right {
+    order: 1; /* Image appears first */
   }
 
   .navbar {
@@ -276,8 +285,8 @@ a:hover {
   }
 
   .profile-pic {
-    width: 140px;
-    height: 160px;
+    width: 160px;
+    height: 180px;
   }
 
   .profile-info h2 {
@@ -286,5 +295,10 @@ a:hover {
 
   .profile-info p {
     font-size: 1rem;
+  }
+
+  /* Adjust content wrapper margin to prevent overlapping with fixed titles */
+  section .content-wrapper {
+    margin-top: 60px;
   }
 }
