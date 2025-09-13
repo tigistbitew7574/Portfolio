@@ -16,6 +16,7 @@ body {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
   transition: all 0.4s ease-in-out;
   scroll-behavior: smooth;
+  text-align: justify; /* CTRL+J effect */
 }
 
 /* ===================== Navbar - Fixed ===================== */
@@ -40,6 +41,7 @@ body {
   font-size: 1.8rem;
   color: #062e3f;
   font-weight: bold;
+  text-align: justify;
 }
 
 .navbar ul {
@@ -56,6 +58,7 @@ body {
   border-bottom: 2px solid transparent;
   transition: color 0.3s ease, border-bottom 0.3s ease;
   cursor: pointer;
+  text-align: justify;
 }
 
 .navbar a:hover,
@@ -76,25 +79,27 @@ body {
   margin-bottom: 2rem;
   gap: 2rem;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
 }
 
 /* ===================== Hero Left (Text) ===================== */
 .hero-left {
   flex: 1;
   order: 1;
+  text-align: justify;
 }
 
 .hero-left h1 {
   color: #220700;
   font-size: 2rem;
   margin-bottom: 0.5rem;
+  text-align: justify;
 }
 
 .hero-left h3 {
   color: #2a0c00;
-  font-size: 1.1rem;
-  line-height: 1.5;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  text-align: justify;
 }
 
 /* ===================== Hero Right (Profile) ===================== */
@@ -131,18 +136,9 @@ body {
   margin-bottom: 1rem;
 }
 
-.profile-info h2 {
-  font-size: 1.5rem;
-  color: #e64a19;
-  margin-bottom: 0.4rem;
-  text-align: center;
-}
-
+.profile-info h2,
 .profile-info p {
-  font-size: 1.2rem;
-  color: #111;
-  margin: 0;
-  text-align: center;
+  text-align: justify; /* CTRL+J effect */
 }
 
 /* ===================== Section Styling ===================== */
@@ -156,6 +152,7 @@ section {
   display: none;
   transition: opacity 0.5s ease;
   position: relative;
+  text-align: justify; /* all section text justified */
 }
 
 section.active {
@@ -163,28 +160,29 @@ section.active {
   animation: slideIn 0.7s ease-in-out;
 }
 
-/* ===================== Section Titles ===================== */
 section h2 {
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.5rem;
   color: #b85c38;
   font-size: 1.6rem;
+  text-align: justify;
 }
 
-section p {
+section p,
+section li {
   margin-bottom: 0.8rem;
   font-size: 1rem;
-  line-height: 1.5;
+  line-height: 1.6;
+  text-align: justify;
 }
 
-section li {
+ul li {
   margin-bottom: 0.5rem;
-  font-size: 1rem;
-  line-height: 1.5;
+  text-align: justify;
 }
 
 /* ===================== Footer ===================== */
 footer {
-  text-align: center;
+  text-align: justify;
   padding: 1rem;
   background-color: #fff4e6;
   border-radius: 10px;
@@ -198,6 +196,7 @@ a {
   color: #0066cc;
   text-decoration: none;
   transition: color 0.3s ease;
+  text-align: justify;
 }
 
 a:hover {
@@ -226,7 +225,7 @@ a:hover {
   .hero {
     flex-direction: column;
     padding: 2rem;
-    text-align: center;
+    text-align: justify;
   }
 
   .hero-left {
@@ -258,10 +257,12 @@ a:hover {
 
   .hero-left h1 {
     font-size: 1.4rem;
+    text-align: justify;
   }
 
   .hero-left h3 {
     font-size: 1rem;
+    text-align: justify;
   }
 
   section {
@@ -279,14 +280,17 @@ a:hover {
 
   .profile-info h2 {
     font-size: 1.2rem;
+    text-align: justify;
   }
 
   .profile-info p {
     font-size: 1rem;
+    text-align: justify;
   }
 
   section p,
   section li {
     line-height: 1.4;
+    text-align: justify;
   }
 }
