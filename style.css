@@ -15,7 +15,7 @@ body {
   padding: 100px 20px 20px;
   border: 1px solid #ccc;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
-  font-size: 16px; /* Enhanced body text */
+  font-size: 16px;
   line-height: 1.8;
   scroll-behavior: smooth;
   transition: all 0.4s ease-in-out;
@@ -37,6 +37,7 @@ body {
   border-radius: 0 0 12px 12px;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
   z-index: 999;
+  flex-wrap: wrap; /* Make navbar wrap on small screens */
 }
 
 .navbar h1 {
@@ -55,8 +56,10 @@ body {
 .navbar ul {
   list-style: none;
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
   flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
 }
 
 .navbar a {
@@ -90,6 +93,7 @@ body {
   margin-bottom: 2rem;
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
   transition: all 0.4s ease;
+  flex-wrap: wrap; /* Responsive stacking */
 }
 
 .hero-left {
@@ -161,7 +165,7 @@ body {
 
 .profile-info h2 {
   font-size: 1.5rem;
-  font-weight: bold; /* Bold titles */
+  font-weight: bold;
   color: #e64a19;
   margin-bottom: 0.4rem;
   cursor: pointer;
@@ -176,6 +180,7 @@ body {
 .profile-info p {
   font-size: 1.2rem;
   color: #111;
+  text-align: center;
 }
 
 /* ===================== Sections ===================== */
@@ -198,7 +203,7 @@ section.active {
 section h2 {
   margin-bottom: 1rem;
   font-size: 1.6rem;
-  font-weight: bold; /* All section titles bold */
+  font-weight: bold;
   color: #b85c38;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -260,17 +265,66 @@ a:hover {
   100% { opacity: 1; transform: translateX(0); }
 }
 
-/* ===================== Responsive ===================== */
+/* ===================== Responsive for Android/Mobile ===================== */
 @media (max-width: 768px) {
-  .hero { flex-direction: column-reverse; padding: 2rem; gap: 1.5rem; }
-  .navbar { flex-direction: column; align-items: flex-start; padding: 1rem; }
-  .navbar h1 { font-size: 1.7rem; }
-  .navbar ul { justify-content: center; width: 100%; gap: 0.8rem; }
-  .hero-left h1 { font-size: 1.6rem; }
-  .hero-left h3 { font-size: 1.1rem; }
-  .profile-pic { width: 140px; height: 160px; }
-  .profile-info h2 { font-size: 1.3rem; }
-  section { padding: 1.2rem; }
-  section h2 { font-size: 1.4rem; }
-  section p, section li { font-size: 1rem; }
+  body {
+    padding: 80px 10px 10px;
+  }
+  
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    padding: 0.8rem;
+  }
+  
+  .navbar h1 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  
+  .navbar ul {
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+  }
+  
+  .hero {
+    flex-direction: column-reverse;
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+  
+  .hero-left h1 {
+    font-size: 1.6rem;
+  }
+  
+  .hero-left h3 {
+    font-size: 1rem;
+    text-align: center;
+  }
+  
+  .profile-pic {
+    width: 120px;
+    height: 140px;
+  }
+  
+  .profile-info h2 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  
+  section {
+    padding: 1rem;
+    border-left: 4px solid #b85c38;
+  }
+  
+  section h2 {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+  
+  section p,
+  section li {
+    font-size: 0.95rem;
+  }
 }
