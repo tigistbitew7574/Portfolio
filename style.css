@@ -4,7 +4,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Times New Roman', Times, serif;
-  text-align: justify; /* CTRL+J effect for everything */
+  text-align: justify; /* CTRL+J for all text */
 }
 
 body {
@@ -31,7 +31,7 @@ body {
   justify-content: space-between;
   align-items: center;
   background: linear-gradient(to right, #00e0ff, #00c2cb);
-  padding: 1.2rem 2rem;
+  padding: 1rem 2rem;
   border-radius: 0 0 12px 12px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   z-index: 999;
@@ -46,7 +46,7 @@ body {
 .navbar ul {
   list-style: none;
   display: flex;
-  gap: 1.2rem;
+  gap: 1rem;
   flex-wrap: wrap;
 }
 
@@ -70,16 +70,16 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 3rem;
+  padding: 2.5rem 2rem;
   background: linear-gradient(to right, #ff6a00, #ffd8a9);
-  border: 4px dashed #b84f00;
+  border: 3px dashed #b84f00;
   border-radius: 20px;
   margin-bottom: 2rem;
   gap: 2rem;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
 }
 
-/* ===================== Hero Left (Text) ===================== */
+/* Hero Left (Text) */
 .hero-left {
   flex: 1;
   order: 1;
@@ -97,7 +97,7 @@ body {
   line-height: 1.6;
 }
 
-/* ===================== Hero Right (Profile) ===================== */
+/* Hero Right (Profile) */
 .hero-right {
   flex: 1;
   order: 2;
@@ -161,21 +161,21 @@ section.active {
   animation: slideIn 0.7s ease-in-out;
 }
 
-/* ===================== Section Titles ===================== */
+/* Section Titles */
 section h2 {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
   color: #b85c38;
   font-size: 1.6rem;
 }
 
 section p,
 section li {
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.5rem;
   font-size: 1rem;
   line-height: 1.6;
 }
 
-/* ===================== Footer ===================== */
+/* Footer */
 footer {
   text-align: justify;
   padding: 1rem;
@@ -186,7 +186,7 @@ footer {
   color: #555;
 }
 
-/* ===================== Links ===================== */
+/* Links */
 a {
   color: #0066cc;
   text-decoration: none;
@@ -198,7 +198,7 @@ a:hover {
   text-decoration: underline;
 }
 
-/* ===================== Animations ===================== */
+/* Animations */
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-8px); }
@@ -216,14 +216,28 @@ a:hover {
 
 /* ===================== Responsive - Mobile / Android ===================== */
 @media (max-width: 768px) {
+  body {
+    padding: 80px 15px 15px;
+  }
+
   .hero {
     flex-direction: column;
-    padding: 2rem;
+    padding: 1.5rem;
     text-align: justify;
+    gap: 1.5rem;
   }
 
   .hero-left {
     order: 2;
+  }
+
+  .hero-left h1 {
+    font-size: 1.6rem;
+  }
+
+  .hero-left h3 {
+    font-size: 1rem;
+    line-height: 1.5;
   }
 
   .hero-right {
@@ -232,37 +246,10 @@ a:hover {
     margin-bottom: 1rem;
   }
 
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1rem;
-  }
-
-  .navbar h1 {
-    font-size: 1.5rem;
-  }
-
-  .navbar ul {
-    justify-content: center;
-    padding-top: 1rem;
-    width: 100%;
-    gap: 0.8rem;
-  }
-
-  .hero-left h1 {
-    font-size: 1.4rem;
-  }
-
-  .hero-left h3 {
-    font-size: 1rem;
-  }
-
-  section {
-    padding: 1.2rem;
-  }
-
   .profile-wrapper {
-    padding: 1.2rem;
+    padding: 1rem;
+    width: 90%;
+    max-width: 300px;
   }
 
   .profile-pic {
@@ -271,7 +258,7 @@ a:hover {
   }
 
   .profile-info h2 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 
   .profile-info p {
@@ -279,8 +266,17 @@ a:hover {
     margin-bottom: 0.4rem;
   }
 
+  section {
+    padding: 1rem 1.2rem;
+  }
+
+  section h2 {
+    font-size: 1.4rem;
+  }
+
   section p,
   section li {
+    font-size: 0.95rem;
     line-height: 1.4;
   }
 }
