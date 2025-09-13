@@ -19,7 +19,7 @@ body {
   scroll-behavior: smooth;
 }
 
-/* ===================== Navbar - Fixed ===================== */
+/* ===================== Navbar ===================== */
 .navbar {
   position: fixed;
   top: 0;
@@ -249,12 +249,12 @@ a:hover {
   .profile-wrapper {
     padding: 1rem;
     width: 90%;
-    max-width: 300px;
+    max-width: 250px; /* smaller than PC for mobile */
   }
 
   .profile-pic {
-    width: 160px;
-    height: 180px;
+    width: 140px;
+    height: 160px; /* smaller, professional size */
   }
 
   .profile-info h2 {
@@ -262,7 +262,7 @@ a:hover {
   }
 
   .profile-info p {
-    font-size: 1rem;
+    font-size: 0.95rem;
     margin-bottom: 0.4rem;
   }
 
