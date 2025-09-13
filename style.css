@@ -4,7 +4,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Times New Roman', Times, serif;
-  text-align: justify; /* CTRL+J for all text */
 }
 
 body {
@@ -19,7 +18,7 @@ body {
   scroll-behavior: smooth;
 }
 
-/* ===================== Navbar ===================== */
+/* ===================== Navbar - Fixed ===================== */
 .navbar {
   position: fixed;
   top: 0;
@@ -31,7 +30,7 @@ body {
   justify-content: space-between;
   align-items: center;
   background: linear-gradient(to right, #00e0ff, #00c2cb);
-  padding: 1rem 2rem;
+  padding: 1.2rem 2rem;
   border-radius: 0 0 12px 12px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   z-index: 999;
@@ -46,7 +45,7 @@ body {
 .navbar ul {
   list-style: none;
   display: flex;
-  gap: 1rem;
+  gap: 1.2rem;
   flex-wrap: wrap;
 }
 
@@ -70,16 +69,17 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2.5rem 2rem;
+  padding: 3rem;
   background: linear-gradient(to right, #ff6a00, #ffd8a9);
-  border: 3px dashed #b84f00;
+  border: 4px dashed #b84f00;
   border-radius: 20px;
   margin-bottom: 2rem;
   gap: 2rem;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
 }
 
-/* Hero Left (Text) */
+/* ===================== Hero Left (Text) ===================== */
 .hero-left {
   flex: 1;
   order: 1;
@@ -93,11 +93,11 @@ body {
 
 .hero-left h3 {
   color: #2a0c00;
-  font-size: 1.15rem;
-  line-height: 1.6;
+  font-size: 1.1rem;
+  line-height: 1.5;
 }
 
-/* Hero Right (Profile) */
+/* ===================== Hero Right (Profile) ===================== */
 .hero-right {
   flex: 1;
   order: 2;
@@ -135,12 +135,14 @@ body {
   font-size: 1.5rem;
   color: #e64a19;
   margin-bottom: 0.4rem;
+  text-align: center;
 }
 
 .profile-info p {
   font-size: 1.2rem;
   color: #111;
-  margin-bottom: 0.6rem;
+  margin: 0;
+  text-align: center;
 }
 
 /* ===================== Section Styling ===================== */
@@ -161,23 +163,28 @@ section.active {
   animation: slideIn 0.7s ease-in-out;
 }
 
-/* Section Titles */
+/* ===================== Section Titles ===================== */
 section h2 {
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.8rem;
   color: #b85c38;
   font-size: 1.6rem;
 }
 
-section p,
+section p {
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
 section li {
   margin-bottom: 0.5rem;
   font-size: 1rem;
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
-/* Footer */
+/* ===================== Footer ===================== */
 footer {
-  text-align: justify;
+  text-align: center;
   padding: 1rem;
   background-color: #fff4e6;
   border-radius: 10px;
@@ -186,7 +193,7 @@ footer {
   color: #555;
 }
 
-/* Links */
+/* ===================== Links ===================== */
 a {
   color: #0066cc;
   text-decoration: none;
@@ -198,7 +205,7 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Animations */
+/* ===================== Animations ===================== */
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-8px); }
@@ -216,28 +223,14 @@ a:hover {
 
 /* ===================== Responsive - Mobile / Android ===================== */
 @media (max-width: 768px) {
-  body {
-    padding: 80px 15px 15px;
-  }
-
   .hero {
     flex-direction: column;
-    padding: 1.5rem;
-    text-align: justify;
-    gap: 1.5rem;
+    padding: 2rem;
+    text-align: center;
   }
 
   .hero-left {
     order: 2;
-  }
-
-  .hero-left h1 {
-    font-size: 1.6rem;
-  }
-
-  .hero-left h3 {
-    font-size: 1rem;
-    line-height: 1.5;
   }
 
   .hero-right {
@@ -246,37 +239,54 @@ a:hover {
     margin-bottom: 1rem;
   }
 
-  .profile-wrapper {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
     padding: 1rem;
-    width: 90%;
-    max-width: 250px; /* smaller than PC for mobile */
   }
 
-  .profile-pic {
-    width: 140px;
-    height: 160px; /* smaller, professional size */
+  .navbar h1 {
+    font-size: 1.5rem;
   }
 
-  .profile-info h2 {
-    font-size: 1.3rem;
+  .navbar ul {
+    justify-content: center;
+    padding-top: 1rem;
+    width: 100%;
+    gap: 0.8rem;
   }
 
-  .profile-info p {
-    font-size: 0.95rem;
-    margin-bottom: 0.4rem;
+  .hero-left h1 {
+    font-size: 1.4rem;
+  }
+
+  .hero-left h3 {
+    font-size: 1rem;
   }
 
   section {
-    padding: 1rem 1.2rem;
+    padding: 1.2rem;
   }
 
-  section h2 {
-    font-size: 1.4rem;
+  .profile-wrapper {
+    padding: 1.2rem;
+  }
+
+  .profile-pic {
+    width: 160px;
+    height: 180px;
+  }
+
+  .profile-info h2 {
+    font-size: 1.2rem;
+  }
+
+  .profile-info p {
+    font-size: 1rem;
   }
 
   section p,
   section li {
-    font-size: 0.95rem;
     line-height: 1.4;
   }
 }
