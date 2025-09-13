@@ -1,4 +1,4 @@
-/* Reset & Base Styling */
+/* ===================== Reset & Base Styling ===================== */
 * {
   margin: 0;
   padding: 0;
@@ -19,7 +19,7 @@ body {
   position: relative;
 }
 
-/* Navbar - Fixed */
+/* ===================== Navbar ===================== */
 .navbar {
   position: fixed;
   top: 0;
@@ -66,11 +66,11 @@ body {
   border-bottom: 2px solid white;
 }
 
-/* Hero Section */
+/* ===================== Hero Section ===================== */
 .hero {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   padding: 3rem;
   background: linear-gradient(to right, #ff6a00, #ffd8a9);
   border: 4px dashed #b84f00;
@@ -79,6 +79,7 @@ body {
   gap: 2rem;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
+  position: relative;
 }
 
 .hero-left {
@@ -99,9 +100,12 @@ body {
   line-height: 1.5;
 }
 
+/* ===================== Profile Image Fixed Right ===================== */
 .hero-right {
-  flex: 1;
-  order: 1;
+  flex: 0 0 180px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -140,14 +144,7 @@ body {
   text-align: center;
 }
 
-.profile-info p {
-  font-size: 1.1rem;
-  color: #111;
-  margin: 0;
-  text-align: center;
-}
-
-/* Section Styling */
+/* ===================== Section Styling ===================== */
 section {
   background-color: white;
   padding: 2rem;
@@ -165,24 +162,20 @@ section.active {
   animation: slideIn 0.7s ease-in-out;
 }
 
-/* Fixed Section Titles */
-section h2,
-section h1 {
-  margin-bottom: 1rem;
+/* ===================== Section Titles Fixed ===================== */
+section h2 {
   color: #b85c38;
   font-size: 1.6rem;
-  position: fixed;
-  top: 70px; /* Below navbar */
-  left: 20px;
+  position: sticky;
+  top: 70px;
   background: white;
   padding: 0 10px;
-  z-index: 900;
   border-radius: 5px;
+  z-index: 900;
 }
 
-/* Content wrapper to prevent overlap */
 section .content-wrapper {
-  margin-top: 50px;
+  margin-top: 40px; /* Space below sticky title */
 }
 
 section p,
@@ -196,7 +189,7 @@ ul li {
   margin-bottom: 0.6rem;
 }
 
-/* Footer */
+/* ===================== Footer ===================== */
 footer {
   text-align: center;
   padding: 1rem;
@@ -207,7 +200,7 @@ footer {
   color: #555;
 }
 
-/* Links */
+/* ===================== Links ===================== */
 a {
   color: #0066cc;
   text-decoration: none;
@@ -219,7 +212,7 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Animations */
+/* ===================== Animations ===================== */
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-8px); }
@@ -235,9 +228,8 @@ a:hover {
   100% { opacity: 1; transform: translateX(0); }
 }
 
-/* Responsive - Android / Mobile */
+/* ===================== Responsive / Mobile ===================== */
 @media (max-width: 768px) {
-  /* Hero image on top */
   .hero {
     flex-direction: column;
     padding: 2rem;
@@ -249,39 +241,9 @@ a:hover {
   }
 
   .hero-right {
-    order: 1; /* Image appears first */
-  }
-
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1rem;
-  }
-
-  .navbar h1 {
-    font-size: 1.5rem;
-  }
-
-  .navbar ul {
-    justify-content: center;
-    padding-top: 1rem;
-    width: 100%;
-    gap: 0.8rem;
-  }
-
-  .hero-left h1 {
-    font-size: 1.4rem;
-  }
-
-  .hero-left h3 {
-    font-size: 1rem;
-  }
-
-  section h2,
-  section h1 {
-    font-size: 1.3rem;
-    top: 60px;
-    left: 10px;
+    order: 1;
+    position: static; /* Image on top for mobile */
+    margin-bottom: 1.5rem;
   }
 
   .profile-pic {
@@ -289,16 +251,12 @@ a:hover {
     height: 180px;
   }
 
-  .profile-info h2 {
-    font-size: 1.1rem;
+  section h2 {
+    font-size: 1.3rem;
+    top: 60px;
   }
 
-  .profile-info p {
-    font-size: 1rem;
-  }
-
-  /* Adjust content wrapper margin to prevent overlapping with fixed titles */
   section .content-wrapper {
-    margin-top: 60px;
+    margin-top: 50px;
   }
 }
