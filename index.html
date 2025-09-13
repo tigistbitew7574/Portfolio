@@ -2,12 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>Tigist Bitewlgn | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
   <style>
     body {
-      font-size: 13px; /* ✅ Set professional body size */
+      font-size: 13px;
+    }
+    /* Make nav links clickable on mobile */
+    .navbar ul li {
+      list-style: none;
+      margin-bottom: 0.3rem;
     }
   </style>
 </head>
@@ -28,7 +33,6 @@
 
   <!-- Hero Section -->
   <header class="hero">
-    <!-- Left: Profile Info -->
     <div class="hero-left">
       <h1>I am Tigist Bitewlgn</h1>
       <h3>
@@ -38,7 +42,6 @@
       </h3>
     </div>
 
-    <!-- Right: Profile Picture -->
     <div class="hero-right">
       <div class="profile-wrapper">
         <img src="tig.jpg" alt="Tigist Bitewlgn" class="profile-pic" />
