@@ -1,5 +1,4 @@
-
-/* Reset & Base Styling */
+/* ===================== Reset & Base Styling ===================== */
 * {
   margin: 0;
   padding: 0;
@@ -19,7 +18,7 @@ body {
   scroll-behavior: smooth;
 }
 
-/* Navbar - Fixed */
+/* ===================== Navbar - Fixed ===================== */
 .navbar {
   position: fixed;
   top: 0;
@@ -66,7 +65,7 @@ body {
   border-bottom: 2px solid white;
 }
 
-/* Hero Section */
+/* ===================== Hero Section ===================== */
 .hero {
   display: flex;
   justify-content: space-between;
@@ -81,10 +80,10 @@ body {
   transition: all 0.3s ease;
 }
 
-/* Reverse Image & Text Layout */
+/* ===================== Hero Left (Text) ===================== */
 .hero-left {
   flex: 1;
-  order: 2;
+  order: 1;
 }
 
 .hero-left h1 {
@@ -100,34 +99,34 @@ body {
   line-height: 1.5;
 }
 
+/* ===================== Hero Right (Profile) ===================== */
 .hero-right {
   flex: 1;
-  order: 1;
+  order: 2;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: flex-end; /* aligns the box to the right */
 }
 
 .profile-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1rem;
+  padding: 1.5rem;
   background: #d7f9ff;
   border: 4px solid #0077ff;
-  border-radius: 20px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  border-radius: 25px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
   animation: float 4s ease-in-out infinite;
   transition: transform 0.3s ease;
 }
 
 .profile-wrapper:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
 }
 
 .profile-pic {
-  width: 180px;
-  height: 200px;
+  width: 200px;
+  height: 220px;
   border-radius: 50%;
   object-fit: cover;
   border: 4px solid #ff8c00;
@@ -135,20 +134,20 @@ body {
 }
 
 .profile-info h2 {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   color: #e64a19;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.4rem;
   text-align: center;
 }
 
 .profile-info p {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: #111;
   margin: 0;
   text-align: center;
 }
 
-/* Section Styling */
+/* ===================== Section Styling ===================== */
 section {
   background-color: white;
   padding: 2rem;
@@ -158,6 +157,7 @@ section {
   border-left: 6px solid #b85c38;
   display: none; /* hidden by default */
   transition: opacity 0.5s ease;
+  position: relative;
 }
 
 section.active {
@@ -165,11 +165,16 @@ section.active {
   animation: slideIn 0.7s ease-in-out;
 }
 
+/* ===================== Section Titles ===================== */
 section h2,
 section h1 {
   margin-bottom: 1rem;
   color: #b85c38;
   font-size: 1.6rem;
+}
+
+section .content-wrapper {
+  margin-top: 50px;
 }
 
 section p,
@@ -183,7 +188,7 @@ ul li {
   margin-bottom: 0.6rem;
 }
 
-/* Footer */
+/* ===================== Footer ===================== */
 footer {
   text-align: center;
   padding: 1rem;
@@ -194,7 +199,7 @@ footer {
   color: #555;
 }
 
-/* Links */
+/* ===================== Links ===================== */
 a {
   color: #0066cc;
   text-decoration: none;
@@ -206,44 +211,38 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Animations */
+/* ===================== Animations ===================== */
 @keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-8px);
-  }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
 }
 
 @keyframes fadeInDown {
-  0% {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes slideIn {
-  0% {
-    opacity: 0;
-    transform: translateX(-100%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  0% { opacity: 0; transform: translateX(-100%); }
+  100% { opacity: 1; transform: translateX(0); }
 }
 
-/* Responsive */
+/* ===================== Responsive - Mobile / Android ===================== */
 @media (max-width: 768px) {
   .hero {
-    flex-direction: column-reverse;
+    flex-direction: column;
     padding: 2rem;
     text-align: center;
+  }
+
+  .hero-left {
+    order: 2;
+  }
+
+  .hero-right {
+    order: 1;
+    justify-content: center; /* center the profile box */
+    margin-bottom: 1rem;
   }
 
   .navbar {
@@ -275,16 +274,24 @@ a:hover {
     padding: 1.2rem;
   }
 
+  .profile-wrapper {
+    padding: 1.2rem;
+  }
+
   .profile-pic {
-    width: 140px;
-    height: 160px;
+    width: 160px;
+    height: 180px;
   }
 
   .profile-info h2 {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 
   .profile-info p {
     font-size: 1rem;
+  }
+
+  section .content-wrapper {
+    margin-top: 60px;
   }
 }
