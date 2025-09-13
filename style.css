@@ -1,4 +1,5 @@
-/* ===================== Reset & Base Styling ===================== */
+
+/* Reset & Base Styling */
 * {
   margin: 0;
   padding: 0;
@@ -16,10 +17,9 @@ body {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
   transition: all 0.4s ease-in-out;
   scroll-behavior: smooth;
-  position: relative;
 }
 
-/* ===================== Navbar ===================== */
+/* Navbar - Fixed */
 .navbar {
   position: fixed;
   top: 0;
@@ -66,11 +66,11 @@ body {
   border-bottom: 2px solid white;
 }
 
-/* ===================== Hero Section ===================== */
+/* Hero Section */
 .hero {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   padding: 3rem;
   background: linear-gradient(to right, #ff6a00, #ffd8a9);
   border: 4px dashed #b84f00;
@@ -79,9 +79,9 @@ body {
   gap: 2rem;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
-  position: relative;
 }
 
+/* Reverse Image & Text Layout */
 .hero-left {
   flex: 1;
   order: 2;
@@ -100,12 +100,9 @@ body {
   line-height: 1.5;
 }
 
-/* ===================== Profile Image Fixed Right ===================== */
 .hero-right {
-  flex: 0 0 180px;
-  position: absolute;
-  top: 20px;
-  right: 20px;
+  flex: 1;
+  order: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -144,7 +141,14 @@ body {
   text-align: center;
 }
 
-/* ===================== Section Styling ===================== */
+.profile-info p {
+  font-size: 1.1rem;
+  color: #111;
+  margin: 0;
+  text-align: center;
+}
+
+/* Section Styling */
 section {
   background-color: white;
   padding: 2rem;
@@ -152,9 +156,8 @@ section {
   margin-bottom: 2rem;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
   border-left: 6px solid #b85c38;
-  display: none;
+  display: none; /* hidden by default */
   transition: opacity 0.5s ease;
-  position: relative;
 }
 
 section.active {
@@ -162,20 +165,11 @@ section.active {
   animation: slideIn 0.7s ease-in-out;
 }
 
-/* ===================== Section Titles Fixed ===================== */
-section h2 {
+section h2,
+section h1 {
+  margin-bottom: 1rem;
   color: #b85c38;
   font-size: 1.6rem;
-  position: sticky;
-  top: 70px;
-  background: white;
-  padding: 0 10px;
-  border-radius: 5px;
-  z-index: 900;
-}
-
-section .content-wrapper {
-  margin-top: 40px; /* Space below sticky title */
 }
 
 section p,
@@ -189,7 +183,7 @@ ul li {
   margin-bottom: 0.6rem;
 }
 
-/* ===================== Footer ===================== */
+/* Footer */
 footer {
   text-align: center;
   padding: 1rem;
@@ -200,7 +194,7 @@ footer {
   color: #555;
 }
 
-/* ===================== Links ===================== */
+/* Links */
 a {
   color: #0066cc;
   text-decoration: none;
@@ -212,51 +206,85 @@ a:hover {
   text-decoration: underline;
 }
 
-/* ===================== Animations ===================== */
+/* Animations */
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
 @keyframes fadeInDown {
-  0% { opacity: 0; transform: translateY(-20px); }
-  100% { opacity: 1; transform: translateY(0); }
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes slideIn {
-  0% { opacity: 0; transform: translateX(-100%); }
-  100% { opacity: 1; transform: translateX(0); }
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
-/* ===================== Responsive / Mobile ===================== */
+/* Responsive */
 @media (max-width: 768px) {
   .hero {
-    flex-direction: column;
+    flex-direction: column-reverse;
     padding: 2rem;
     text-align: center;
   }
 
-  .hero-left {
-    order: 2;
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
   }
 
-  .hero-right {
-    order: 1;
-    position: static; /* Image on top for mobile */
-    margin-bottom: 1.5rem;
+  .navbar h1 {
+    font-size: 1.5rem;
+  }
+
+  .navbar ul {
+    justify-content: center;
+    padding-top: 1rem;
+    width: 100%;
+    gap: 0.8rem;
+  }
+
+  .hero-left h1 {
+    font-size: 1.4rem;
+  }
+
+  .hero-left h3 {
+    font-size: 1rem;
+  }
+
+  section {
+    padding: 1.2rem;
   }
 
   .profile-pic {
-    width: 160px;
-    height: 180px;
+    width: 140px;
+    height: 160px;
   }
 
-  section h2 {
-    font-size: 1.3rem;
-    top: 60px;
+  .profile-info h2 {
+    font-size: 1.1rem;
   }
 
-  section .content-wrapper {
-    margin-top: 50px;
+  .profile-info p {
+    font-size: 1rem;
   }
 }
